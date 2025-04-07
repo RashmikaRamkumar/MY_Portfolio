@@ -8,7 +8,7 @@ import ScrollIndicator from "../components/ScrollIndicator";
 import Contact from "./Contact";
 import Projects from "./Projects";
 import Skills from "./Skills/Index";
-import image from "../assets/image.jpeg"; // Adjust the path as necessary
+// import image from "../assets/image.jpeg"; // Adjust the path as necessary
 
 const Home = () => {
   const { isDark } = useContext(ThemeContext);
@@ -198,7 +198,7 @@ const Home = () => {
                 className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-indigo-600 dark:border-indigo-400 shadow-xl"
               >
                 <img
-                  src={image}
+                  // src={image}
                   alt="Developer"
                   className="w-full h-full object-cover"
                 />
