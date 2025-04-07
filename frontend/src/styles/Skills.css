@@ -1,0 +1,196 @@
+/* Skills.css */
+
+/* Gradient backgrounds */
+.bg-gradient-radial {
+  background: radial-gradient(
+    circle at center,
+    var(--tw-gradient-from) 0%,
+    var(--tw-gradient-to) 70%
+  );
+}
+
+/* Skill card hover effects */
+.skill-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Skill icon pulse animation */
+.icon-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+/* Progress bar shimmer effect */
+.skill-bar-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress-bar {
+  position: relative;
+}
+
+.progress-shimmer {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Tag cloud hover effects */
+.tag-item {
+  transition: all 0.3s ease;
+}
+
+.tag-item:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* Timeline animations */
+.timeline-stripe {
+  position: relative;
+}
+
+.timeline-stripe::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 15px,
+    rgba(255, 255, 255, 0.5) 15px,
+    rgba(255, 255, 255, 0.5) 20px
+  );
+  opacity: 0.3;
+  animation: moveStripes 30s linear infinite;
+}
+
+@keyframes moveStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+.timeline-dot {
+  position: relative;
+}
+
+.timeline-pulse {
+  animation: timelinePulse 2s infinite;
+}
+
+@keyframes timelinePulse {
+  0% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+.timeline-year,
+.timeline-title,
+.timeline-company,
+.timeline-description {
+  transition: all 0.3s ease;
+}
+
+.timeline-year {
+  position: relative;
+  display: inline-block;
+}
+
+.timeline-year:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 40px;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+div:hover .timeline-year:after {
+  width: 100%;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .timeline-stripe::after {
+    animation: none;
+  }
+}
+
+/* Experience card hover effects */
+.experience-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add transition for height */
+.experience-card {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+/* Pulse animation for achievements */
+@keyframes achievementPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.timeline-description {
+  animation: achievementPulse 2s infinite;
+}
